@@ -1,12 +1,7 @@
 
-# Implement >= > <= < + - == != * operator overloads.
-
-# example >>> Money(100.00, "USD") + Money(56.32, "EUR")
-
 class Money:
 
     def __init__(self, amount, currency):
-        # could seek input for the amount and currency
         self.amount = amount
         self.currency = currency
 
@@ -29,16 +24,16 @@ class Money:
         return self.wallet_value() + other.wallet_value()
 
     def __sub__(self, other):
-        return self.wallet_value() + other.wallet_value()
+        return self.wallet_value() - other.wallet_value()
 
     def __eq__(self, other):
-        return self.wallet_value() + other.wallet_value()
+        return self.wallet_value() == other.wallet_value()
 
     def __ne__(self, other):
-        return self.wallet_value() + other.wallet_value()
+        return self.wallet_value() != other.wallet_value()
 
     def __mul__(self, other):
-        return self.wallet_value() + other.wallet_value()
+        return self.wallet_value() * other.wallet_value()
 
     def wallet_value(self):
         if self.currency == "USD":
@@ -55,6 +50,7 @@ rayn_money = Money(1, "JPY")
 hep_money = Money(50, "USD")
 davis_money = Money(25, "BTC")
 eileen_money = Money(30, "EUR")
+
 print("HEP put in {} {}. It's worth ${} American.".format(hep_money.amount, hep_money.currency,
                                                     hep_money.wallet_value()))
 print("Rayn put in {} {}. It's worth ${} American.".format(rayn_money.amount, rayn_money.currency,
@@ -63,15 +59,12 @@ print("Davis put in {} {}. It's worth ${} American.".format(davis_money.amount, 
                                                           davis_money.wallet_value()))
 print("Eileen put in {} {}. It's worth ${} American.".format(eileen_money.amount, eileen_money.currency,
                                                             eileen_money.wallet_value()))
-print("HEP less than Rayn?", hep_money < rayn_money)  # true
-print("HEP greater than Davis?", hep_money > davis_money)  # false
-print("HEP greater than or equal to Eileen?", hep_money >= eileen_money)  # true
-print("HEP less than or equal to Eileen?", hep_money <= eileen_money)  # false
-print("HEP added to Rayn: ${} American.".format(hep_money.wallet_value() +
-                                                rayn_money.wallet_value()))
-print("HEP subtracted from Davis: ${} American.".format((davis_money.wallet_value() -
-                                                         hep_money.wallet_value())))
-print("Davis equal to Rayn?", davis_money.wallet_value() == rayn_money.wallet_value())
-print("Eileen not equal to Davis?", eileen_money.wallet_value() != davis_money.wallet_value())
-print("Rayn multiplied by Eileen: ${} American.".format(rayn_money.wallet_value() *
-                                                        eileen_money.wallet_value()))
+print("HEP less than Rayn?", hep_money < rayn_money)
+print("HEP greater than Davis?", hep_money > davis_money)
+print("HEP greater than or equal to Eileen?", hep_money >= eileen_money)
+print("HEP less than or equal to Eileen?", hep_money <= eileen_money)
+print("HEP added to Rayn: ${} American.".format(hep_money + rayn_money))
+print("HEP subtracted from Davis: ${} American.".format(davis_money - hep_money))
+print("Davis equal to Rayn?", (davis_money == rayn_money))
+print("Eileen not equal to Davis?", eileen_money != davis_money)
+print("Rayn multiplied by Eileen: ${} American.".format(rayn_money * eileen_money))
