@@ -39,11 +39,11 @@ class Money:
         if self.currency == "USD":
             return self.amount * 1
         elif self.currency == "JPY":
-            return self.amount * 110.762
+            return self.amount * 0.00902972  # 110.762
         elif self.currency == "EUR":
-            return self.amount * 1.11363
+            return self.amount * 1.11315
         elif self.currency == "BTC":
-            return self.amount * 534.015
+            return self.amount * 529.933
 
 
 rayn_money = Money(1, "JPY")
