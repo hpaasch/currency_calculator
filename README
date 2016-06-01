@@ -1,0 +1,19 @@
+my_calculator.py is the Normal Mode of the homework.
+
+For Hard Mode, I tried several things, none of which really solved it. the file
+heptest.py shows these efforts:
+
+-- I manually added .wallet_value to the objects, and that worked, but of course
+amounts to manual labor.
+
+-- I used a FOR loop to pull all the .wallet_value numbers into a list, but
+couldn't do any math on that.
+
+-- I added @property over the wallet_value function.
+
+-- I created a @wallet_value.getter method.
+
+-- I tried a million ways of attaching "property" to the equation to tell it
+to just look at the designated attribute of wallet_value.
+
+-- I couldn't get my head around using a series of binary magic methods.
